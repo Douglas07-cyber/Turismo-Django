@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<!-- Pacotes -->
+<section class="row sec-pacotes" id="pacotes">
+
+    {% for pacote in pacotes %}
+    <div class="card col-3" style="width:300px">
+        <img class="card-img-top" src="{{pacote.imagem.url}}" alt="{{pacote.titulo}}">
+        <div class="card-body">
+            <h4 class="card-title">{{pacote.titulo}}</h4>
+            <p class="card-text">{{pacote.descricao}}</p>
+            <a href="" target="_blank" class="btn btn-primary">Confira</a>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+<!-- Contato -->
+<div class="container-fluid divisao">
+    <h2>Fale Conosco</h2>
+</div>
+
+<!-- <section class="row sec-contato" id="contatos">
+    <div class="col-12">
+        <form method="POST">
+            {% csrf_token %}
+        
+            <div class="mb-3 mt-3">
+                <label for="nome" class="form-label">Nome:</label>
+                
+            </div>
+            <div class="mb-3">
+                <label for="Email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="pwd" placeholder="Informe seu Email" name="pswd">
+            </div>
+            <label for="comment">Comentários:</label>
+            <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+</section> -->
+<section class="row sec-contato" id="contatos">
+    <div class="col-12">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+</section> 
+
+
+{% endblock %}
