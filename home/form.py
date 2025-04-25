@@ -3,6 +3,7 @@ from django import forms
 
 class ContatoForms(forms.Form):
     nome = forms.CharField(max_length=100, label='Nome')
+    email = forms.EmailField(label='E-mail')
     telefone = forms.CharField(
         max_length=15, 
         label='Telefone', 

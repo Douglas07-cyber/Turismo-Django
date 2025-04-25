@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Pacote
 from .form import ContatoForms
 from django.core.mail import send_mail
@@ -13,6 +13,7 @@ def principal(request):
          if form.is_valid():
             # Aqui posso processar os dados do formulário, como enviar um e-mail ou salvar no banco
             nome = form.cleaned_data['nome']
+            email = form.cleaned_data['email']
             telefone = form.cleaned_data['telefone']
             mensagem = form.cleaned_data['mensagem']
             
@@ -21,17 +22,16 @@ def principal(request):
             
             send_mail(
                 f"Mensagem de {nome}",
-                f"Mensagem: {mensagem} Contato: {telefone}",
-                telefone,
+                f"Mensagem: {mensagem}\nTelefone: {telefone}",
+                email,
                 ['douglasnunes224@gmail.com'],
                 fail_silently=False,
             )
-            
-            
+                        
             # Depois de processar, posso redirecionar ou renderizar uma página de sucesso
             messages.info(request, 'Email enviado com sucesso, em breve o administrador vai entrar em contato')
             form = ContatoForms()
-            return render(request, 'home/principal.html', {'pacotes':pacotes, 'form': form})
+            return redirect("/")
            
     else:
         form = ContatoForms()
