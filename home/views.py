@@ -22,7 +22,7 @@ def principal(request):
             
             send_mail(
                 f"Mensagem de {nome}",
-                f"Mensagem: {mensagem}\nTelefone: {telefone}",
+                f"Mensagem: {mensagem}\nTelefone: {telefone}\nEmail: {email}",
                 email,
                 ['douglasnunes224@gmail.com'],
                 fail_silently=False,
