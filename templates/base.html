@@ -50,6 +50,10 @@
                 </div>
             </div>
         </nav>
+        <!-- Botão modo dark -->
+         <div class="dark-mode-container">
+            <button class="toggle-dark-mode" onclick="toggleDarkMode()">🌙</button>
+        </div>
     </header>
 
     <main>
@@ -112,14 +116,19 @@
 
         {% block content %}
         {% endblock %}
+
+         <!-- Carregar JavaScript -->
+    <script src="{% static 'js/script.js' %}"></script>
     </main>
 
-    <footer class="fixed-bottom">
+    <footer class="fixed-bottom footer">
         <h5>&copy; Girassol Turismo</h5>
     </footer>
 
     <!-- JS Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
+
 
 </html>

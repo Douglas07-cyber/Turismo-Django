@@ -1,10 +1,12 @@
 /* === NAVBAR === */
 .nav-top {
-  background-color: #5C4033 !important; /* Marrom terra */
+  background-color: #5C4033
+    /* Marrom terra */
 }
 
 .nav-link {
-  color: #FFF8E1 !important; /* Areia clara */
+  color: #fff1e1 !important;
+  /* Areia clara */
   font-size: 23px;
 }
 
@@ -13,7 +15,8 @@
 
 /* === FOOTER === */
 footer {
-  background-color: #5C4033 !important; /* Marrom seco */
+  background-color: #5C4033 ;
+  /* Marrom seco */
   color: #FFF8E1 !important;
   text-align: center !important;
   padding: 10px;
@@ -29,26 +32,41 @@ footer {
 
 .carousel-caption {
   background-color: rgba(0, 0, 0, 0.6) !important;
-  color: #F2C57C !important; /* Dourado cerrado */
+  color: #F2C57C !important;
+  /* Dourado cerrado */
   padding: 10px;
   border-radius: 10px;
 }
 
+.divisao2{
+  background-color: #da61d0;
+    /* Amarelo queimado */
+    text-align: center !important;
+    color: #faf3f3 !important;
+    padding: 2em !important;
+    /* formatação da fonte */
+    font-family: 'playfair Display', serif !important;
+    color: #f7f1f1 !important;
+}
+
 /* === DIVISÃO === */
 .divisao {
-  background-color: #5C4033 !important; /* Amarelo queimado */
+  background-color: #5C4033;
+  /* Amarelo queimado */
   text-align: center !important;
   color: #faf3f3 !important;
   padding: 2em !important;
   /* formatação da fonte */
-  font-family:'playfair Display',serif !important;
+  font-family: 'playfair Display', serif !important;
   color: #f7f1f1 !important;
 }
 
 /* === PACOTES === */
 body {
-  font-size: 16px; /* Tamanho de letra padrão */
-  font-family: Arial, sans-serif; /* Fonte base */
+  font-size: 16px;
+  /* Tamanho de letra padrão */
+  font-family: Arial, sans-serif;
+  /* Fonte base */
 }
 
 .sec-pacotes {
@@ -57,7 +75,7 @@ body {
   flex-wrap: wrap;
   justify-content: center !important;
   gap: 1rem;
-  background-color: #9682762c; /* Fundo areia suave */
+  background-color: #03030300;
   padding: 2rem;
   border-radius: 10px;
 }
@@ -92,11 +110,13 @@ body {
 }
 
 .card h4 {
-  color: #8B4513 !important; /* Marrom cerrado */
+  color: #8B4513 !important;
+  /* Marrom cerrado */
   font-size: 1.25rem;
   font-weight: bold;
   margin-top: 0.75rem;
-  text-align: center; /* Título centralizado */
+  text-align: center;
+  /* Título centralizado */
 }
 
 .card p {
@@ -107,13 +127,15 @@ body {
 }
 
 .card .btn {
-  background-color: #d4a825; /* Dourado cerrado */
+  background-color: #d4a825;
+  /* Dourado cerrado */
   border: none;
   font-weight: bold;
   color: #fff;
   font-size: 1rem;
   padding: 0.6rem 1.5rem;
-  margin: 1rem auto 0 auto; /* CENTRALIZA O BOTÃO */
+  margin: 1rem auto 0 auto;
+  /* CENTRALIZA O BOTÃO */
   display: block;
   border-radius: 8px;
   transition: background-color 0.3s;
@@ -133,25 +155,71 @@ body {
   justify-content: center !important;
 }
 
+/* Estilo do botão dark mode */
+.dark-mode-container {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 999;
+}
 
->>>>>>> parent of 5bb7966 (Revert "Merge branch 'main' of https://github.com/Douglas07-cyber/Site-Turismo")
-@media (max-width: 768px) {
-  .sec-pacotes {
-    flex-direction: column;
-    align-items: center;
-  }
+.toggle-dark-mode {
+  padding: 8px 12px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.3s, transform 0.3s;
+}
 
-  .card {
-    width: 90% !important;
-  }
+.toggle-dark-mode:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
 
-  .sec-contato .col-6 {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
 
-  iframe {
-    width: 100% !important;
-    height: auto;
+body.dark-mode .navbar {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode .footer {
+  background-color: #1f1f1f;
+  color: #ccc;
+}
+
+/* Responsividade para botão */
+@media (max-width: 600px) {
+  .toggle-dark-mode {
+    padding: 6px 10px;
+
+
+
+    @media (max-width: 768px) {
+      .sec-pacotes {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 90% !important;
+      }
+
+      .sec-contato .col-6 {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+
+      iframe {
+        width: 100% !important;
+        height: auto;
+      }
+    }
   }
 }
